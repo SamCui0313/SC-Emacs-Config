@@ -7,18 +7,41 @@
 (global-display-line-numbers-mode 1)
 (tool-bar-mode -1)
 (setq make-backup-files nil)
-
+(setq-default tab-width 4)
+;; Theme
 (use-package gruvbox-theme
   :ensure t
   :init
   (load-theme 'gruvbox t)
 )
-(use-package evil
+;; vim key
+;;(use-package evil
+;;  :ensure t
+;;  :init
+;;  (evil-mode 1)
+;;)
+;; start page
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
+(use-package company-box
+  :ensure t
+  :if window-system
+  :hook (company-mode . company-box-mode))
+
+(use-package company
   :ensure t
   :init
-  (evil-mode 1)
-)
-
+  (global-company-mode)
+  :config
+  (setq company-minimum-prefix-length 1)
+  (setq company-tooltip-align-annotations t)
+  (setq company-idle-delay 0.0)
+  (setq company-show-numbers t)
+  (setq company-selection-wrap-around t)
+  (setq company-transformers '(company-sort-by-occurrence)))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
