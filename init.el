@@ -13,7 +13,11 @@
   :init
   (load-theme 'gruvbox t)
 )
-
+(use-package evil
+  :ensure t
+  :init
+  (evil-mode 1)
+)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
