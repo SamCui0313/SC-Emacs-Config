@@ -42,6 +42,13 @@
   (setq company-show-numbers t)
   (setq company-selection-wrap-around t)
   (setq company-transformers '(company-sort-by-occurrence)))
+
+(use-package undo-tree
+  :ensure t
+  :init
+  (global-undo-tree-mode)
+  )
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
