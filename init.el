@@ -2,6 +2,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+(set-frame-font "Hack Bold Italic 14" nil t)
 (setq inhibit-startup-screen t)
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode 1)
