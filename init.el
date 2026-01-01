@@ -2,7 +2,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-(set-frame-font "Hack Bold Italic 14" nil t)
+(set-frame-font "Menlo Bold Italic 18" nil t)
 (setq inhibit-startup-screen t)
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode 1)
@@ -16,11 +16,16 @@
   (load-theme 'gruvbox t)
 )
 ;; vim key
-;;(use-package evil
-;;  :ensure t
-;;  :init
-;;  (evil-mode 1)
-;;)
+(use-package evil
+  :ensure t
+  :init
+  (setq evil-shift-width 4)
+  (evil-mode 1)
+)
+(define-key evil-insert-state-map (kbd "C-a") 'beginning-of-line)
+(define-key evil-insert-state-map (kbd "C-e") 'end-of-line)
+(define-key evil-insert-state-map (kbd "C-n") 'next-line)
+(define-key evil-insert-state-map (kbd "C-p") 'previous-line)
 ;; start page
 (use-package dashboard
   :ensure t
